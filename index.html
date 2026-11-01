@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Flappy">
+<meta name="application-name" content="Flappy">
+<meta name="theme-color" content="#50aaeb">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>Flappy Bird — Карайкоз Н. В.</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #20303a;
+               overscroll-behavior: none; touch-action: none;
+               -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+               -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%;
+               font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  body { position: fixed; inset: 0; }
+  #wrap { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; height: 100dvh; overflow: hidden; touch-action: none; }
+  canvas { position: absolute; top: 0; display: block; touch-action: none; }
+  /* Невидимый элемент, чтобы прочитать env(safe-area-inset-*) из JS */
+  #safe { position: fixed; visibility: hidden; pointer-events: none;
+          padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); }
+  .btn { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 10px); width: 44px; height: 44px;
+         border: 2px solid rgba(40,40,40,.55); border-radius: 12px; background: rgba(255,255,255,.55);
+         padding: 0; margin: 0; display: flex; align-items: center; justify-content: center; cursor: pointer;
+         touch-action: none; -webkit-tap-highlight-color: transparent; outline: none; z-index: 2; }
+  .btn:active { background: rgba(255,255,255,.8); }
+  .btn svg { width: 24px; height: 24px; fill: #2a2a2a; pointer-events: none; }
+  #pauseBtn { right: calc(env(safe-area-inset-right, 0px) + 10px); }
+  #muteBtn  { left: calc(env(safe-area-inset-left, 0px) + 10px); }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game"></canvas>
+  <button id="muteBtn" class="btn" aria-label="Звук"></button>
+  <button id="pauseBtn" class="btn hidden" aria-label="Пауза"></button>
+</div>
+<div id="safe"></div>
+<script>
+"use strict";
+// ===== Flappy Bird — Карайкоз Н. В. (HTML5 Canvas, один файл, работает офлайн) =====
+// Логический мир: высота не меньше 640, ширина не меньше 360 «игровых пикселей».
+// Физика задана в игровых пикселях и секундах и не зависит от размера экрана и частоты кадров.
+
+const BASE_H = 640, MIN_W = 360, MAX_W = 960, GROUND_H = 80;
+const SCROLL = 160, PIPE_SPACING = 240;               // скорость прокрутки, шаг труб
+const R = 16, GRAVITY = 1500, FLAP = -460, MAX_FALL = 700; // физика птицы
+const PIPE_W = 70, GAP = 160, CAP_H = 26, CAP_EX = 5;  // трубы
+const STEP = 1 / 120;          // фиксированный шаг физики: 60 Гц и 120 Гц дают одинаковую игру
+const MAX_FRAME = 0.1;         // ограничение dt (после сворачивания, подвисания)
+const OVER_LOCK = 0.4;         // после проигрыша 400 мс касания игнорируются
+
+let W = 480, H = 640, GROUND_Y = H - GROUND_H, BIRD_X = 130, BIRD_Y = 300;
+let k = 1, dpr = 1;                                    // CSS-пикселей на игровой пиксель, devicePixelRatio
+let safe = { t: 0, r: 0, b: 0, l: 0 };                 // безопасные отступы в игровых пикселях
+
+const wrap = document.getElementById("wrap");
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const pauseBtn = document.getElementById("pauseBtn");
+const muteBtn = document.getElementById("muteBtn");
+const isTouch = ("ontouchstart" in window) || navigator.maxTouchPoints > 0 ||
+                (window.matchMedia && matchMedia("(pointer: coarse)").matches);
+
+// ----- Хранилище (в приватном режиме Safari может бросать исключения) -----
+function lsGet(key, def) { try { const v = localStorage.getItem(key); return v === null ? def : v; } catch (e) { return def; } }
+function lsSet(key, v) { try { localStorage.setItem(key, String(v)); } catch (e) {} }
+
+// ----- Состояние игры -----
+let state = "start";            // start | playing | paused | over
+let score = 0, best = parseInt(lsGet("flappyBest", "0"), 10) || 0;
+let groundOffset = 0, flash = 0, overLock = 0;
+const bird = { x: BIRD_X, y: BIRD_Y, vy: 0, wing: 0, idle: 0 };
+let pipes = [];
+const clouds = [];
+function rand(a, b) { return a + Math.random() * (b - a); }
+
+// ----- Размер экрана: холст на весь экран, чёткость по devicePixelRatio -----
+function readSafe() {
+  const cs = getComputedStyle(document.getElementById("safe"));
+  return { t: parseFloat(cs.paddingTop) || 0, r: parseFloat(cs.paddingRight) || 0,
+           b: parseFloat(cs.paddingBottom) || 0, l: parseFloat(cs.paddingLeft) || 0 };
+}
+function resize() {
+  const cw = wrap.clientWidth || window.innerWidth;
+  const ch = wrap.clientHeight || window.innerHeight;
+  dpr = Math.min(window.devicePixelRatio || 1, 3);
+  // Высота мира = 640; если экран узкий (портрет телефона) — ширина 360, а высота растёт
+  k = ch / BASE_H;
+  if (cw / k < MIN_W) k = cw / MIN_W;
+  const oldGround = GROUND_Y;
+  H = ch / k;
+  W = Math.min(cw / k, MAX_W);                         // на широком мониторе — не шире 960, по центру
+  GROUND_Y = H - GROUND_H;
+  BIRD_X = Math.round(Math.min(W * 0.3, 150));
+  BIRD_Y = GROUND_Y * 0.5;
+  const cssW = W * k, cssH = H * k;
+  canvas.style.width = cssW + "px"; canvas.style.height = cssH + "px";
+  canvas.style.left = ((cw - cssW) / 2) + "px";
+  canvas.width = Math.round(cssW * dpr); canvas.height = Math.round(cssH * dpr);
+  const s = readSafe();
+  safe = { t: s.t / k, r: s.r / k, b: s.b / k, l: s.l / k };
+  const off = (cw - cssW) / 2;                           // кнопки — внутри игрового поля
+  muteBtn.style.left = (off + s.l + 10) + "px"; pauseBtn.style.right = (off + s.r + 10) + "px";
+  // Подстраиваем объекты под новый размер
+  bird.x = BIRD_X;
+  if (state === "start") bird.y = BIRD_Y;
+  else bird.y = Math.min(bird.y + (GROUND_Y - oldGround), GROUND_Y - R);
+  for (const p of pipes) p.gapY = clampGap(p.gapY + (GROUND_Y - oldGround) / 2);
+  while (clouds.length < 7) clouds.push({ x: rand(0, W), y: 0 });
+  for (const c of clouds) c.y = rand(30, GROUND_Y * 0.45);
+  if (state === "playing") pause();                    // поворот экрана во время игры — пауза
+  draw();
+}
+function clampGap(g) { return Math.max(70, Math.min(GROUND_Y - GAP - 70, g)); }
+let resizeTimer = 0;
+function scheduleResize() { resize(); clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 250); }
+window.addEventListener("resize", scheduleResize);
+window.addEventListener("orientationchange", scheduleResize);
+if (window.visualViewport) visualViewport.addEventListener("resize", scheduleResize);
+
+// Высота прохода случайная, но не дальше 220 от предыдущей — на высоком экране телефона игра остаётся честной
+function newPipe(x) {
+  let lo = 70, hi = GROUND_Y - GAP - 70;
+  if (pipes.length) { const prev = pipes[pipes.length - 1].gapY; lo = Math.max(lo, prev - 220); hi = Math.min(hi, prev + 220); }
+  return { x: x, gapY: rand(lo, Math.max(lo, hi)), passed: false };
+}
+function resetBird() { bird.x = BIRD_X; bird.y = BIRD_Y; bird.vy = 0; bird.wing = 0; bird.idle = 0; }
+
+function startGame() {
+  pipes = []; score = 0; resetBird();
+  for (let i = 0; i < 3; i++) pipes.push(newPipe(W * 0.6 + 200 + i * PIPE_SPACING));
+  state = "playing"; bird.vy = FLAP; sound("flap");
+  updateButtons();
+}
+
+// ----- Звук (WebAudio создаётся только после первого касания — требование iOS) -----
+let audio = null, muted = lsGet("flappyMuted", "0") === "1";
+function unlockAudio() {
+  try {
+    if (!audio) { const AC = window.AudioContext || window.webkitAudioContext; if (AC) audio = new AC(); }
+    if (audio && audio.state === "suspended") audio.resume();
+  } catch (e) { audio = null; }
+}
+function tone(freq, freq2, dur, type, vol, delay) {
+  const t0 = audio.currentTime + (delay || 0);
+  const o = audio.createOscillator(), g = audio.createGain();
+  o.type = type; o.frequency.setValueAtTime(freq, t0);
+  o.frequency.exponentialRampToValueAtTime(freq2, t0 + dur);
+  g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  o.connect(g); g.connect(audio.destination); o.start(t0); o.stop(t0 + dur + 0.02);
+}
+function sound(name) {
+  if (muted || !audio || audio.state !== "running") return;
+  try {
+    if (name === "flap") tone(520, 760, 0.09, "square", 0.035);
+    else if (name === "point") { tone(880, 880, 0.08, "triangle", 0.06); tone(1320, 1320, 0.12, "triangle", 0.06, 0.08); }
+    else if (name === "hit") { tone(220, 60, 0.35, "sawtooth", 0.07); }
+  } catch (e) {}
+}
+
+// ----- Кнопки на экране (SVG, чтобы не зависеть от шрифта с эмодзи) -----
+const ICON_PAUSE = '<svg viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>';
+const ICON_PLAY  = '<svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg>';
+const ICON_SOUND = '<svg viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3z"/><path d="M15 8.5a5 5 0 0 1 0 7" stroke="#2a2a2a" stroke-width="2" fill="none"/><path d="M17.5 6a8.5 8.5 0 0 1 0 12" stroke="#2a2a2a" stroke-width="2" fill="none"/></svg>';
+const ICON_MUTE  = '<svg viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3z"/><path d="M15 9l6 6M21 9l-6 6" stroke="#2a2a2a" stroke-width="2.2"/></svg>';
+function updateButtons() {
+  pauseBtn.classList.toggle("hidden", !(state === "playing" || state === "paused"));
+  pauseBtn.innerHTML = state === "paused" ? ICON_PLAY : ICON_PAUSE;
+  pauseBtn.setAttribute("aria-label", state === "paused" ? "Продолжить" : "Пауза");
+  muteBtn.innerHTML = muted ? ICON_MUTE : ICON_SOUND;
+  muteBtn.setAttribute("aria-label", muted ? "Включить звук" : "Выключить звук");
+}
+function pause() { if (state === "playing") { state = "paused"; updateButtons(); } }
+function resume() { if (state === "paused") { state = "playing"; lastTime = performance.now(); acc = 0; updateButtons(); } }
+function togglePause() { if (state === "playing") pause(); else if (state === "paused") resume(); }
+function toggleMute() { muted = !muted; lsSet("flappyMuted", muted ? "1" : "0"); updateButtons(); }
+
+// Кнопки реагируют на pointerdown и не передают касание игре
+function bindButton(el, fn) {
+  const h = e => { e.preventDefault(); e.stopPropagation(); unlockAudio(); fn(); };
+  if (window.PointerEvent) el.addEventListener("pointerdown", h, { passive: false });
+  else { el.addEventListener("touchstart", h, { passive: false }); el.addEventListener("mousedown", h); }
+  el.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); });
+}
+bindButton(pauseBtn, togglePause);
+bindButton(muteBtn, toggleMute);
+
+// ----- Действие игрока: касание, клик, пробел, стрелка вверх -----
+function action() {
+  unlockAudio();
+  if (state === "start") startGame();
+  else if (state === "playing") { bird.vy = FLAP; bird.wing = 0; sound("flap"); }
+  else if (state === "paused") resume();
+  else if (state === "over" && overLock <= 0) { state = "start"; pipes = []; resetBird(); updateButtons(); }
+}
+function onPress(e) {
+  if (e.cancelable) e.preventDefault();
+  if (e.type === "pointerdown" && e.pointerType === "mouse" && e.button !== 0) return;
+  action();
+}
+if (window.PointerEvent) canvas.addEventListener("pointerdown", onPress, { passive: false });
+else { canvas.addEventListener("touchstart", onPress, { passive: false }); canvas.addEventListener("mousedown", onPress); }
+// Глушим системные жесты: прокрутку, двойной тап и щипок (iOS Safari)
+const stop = e => { if (e.cancelable) e.preventDefault(); };
+document.addEventListener("touchstart", stop, { passive: false });
+document.addEventListener("touchmove", stop, { passive: false });
+document.addEventListener("touchend", stop, { passive: false });
+document.addEventListener("gesturestart", stop, { passive: false });
+document.addEventListener("gesturechange", stop, { passive: false });
+document.addEventListener("dblclick", stop, { passive: false });
+document.addEventListener("contextmenu", stop);
+
+window.addEventListener("keydown", e => {
+  if (e.code === "Space" || e.code === "ArrowUp") { e.preventDefault(); if (!e.repeat) action(); }
+  else if (e.code === "KeyP" || e.code === "Escape") togglePause();
+  else if (e.code === "KeyM") toggleMute();
+});
+// Свернули Safari, заблокировали телефон, переключили вкладку — пауза
+document.addEventListener("visibilitychange", () => { if (document.hidden) pause(); });
+window.addEventListener("pagehide", pause);
+window.addEventListener("blur", pause);
+
+function gameOver() {
+  state = "over"; flash = 0.4; overLock = OVER_LOCK; sound("hit");
+  if (score > best) { best = score; lsSet("flappyBest", best); }
+  updateButtons();
+}
+
+// ----- Логика одного шага физики (dt = STEP) -----
+function scrollBg(dt) {
+  groundOffset = (groundOffset + SCROLL * dt) % 24;
+  for (const c of clouds) {              // облака медленнее труб — параллакс
+    c.x -= SCROLL * 0.2 * dt;
+    if (c.x < -120) { c.x = W + rand(0, 100); c.y = rand(30, GROUND_Y * 0.45); }
+  }
+}
+function update(dt) {
+  if (flash > 0) flash -= dt;
+  if (overLock > 0) overLock -= dt;
+  if (state === "start") {
+    bird.idle += dt; bird.y = BIRD_Y + Math.sin(bird.idle * 4) * 8; bird.wing += dt * 12;
+    scrollBg(dt);
+  } else if (state === "playing") {
+    bird.vy = Math.min(bird.vy + GRAVITY * dt, MAX_FALL);
+    bird.y += bird.vy * dt; bird.wing += dt * 18;
+    scrollBg(dt);
+    for (const p of pipes) {
+      p.x -= SCROLL * dt;
+      if (!p.passed && p.x + PIPE_W < bird.x) { p.passed = true; score++; sound("point"); }
+    }
+    pipes = pipes.filter(p => p.x + PIPE_W + CAP_EX >= 0);
+    while (pipes.length === 0 || pipes[pipes.length - 1].x < W + PIPE_SPACING) {
+      const lastX = pipes.length ? pipes[pipes.length - 1].x : W;
+      pipes.push(newPipe(lastX + PIPE_SPACING));
+    }
+    // Столкновения: прямоугольник птицы чуть меньше рисунка
+    const r = R - 3, bl = bird.x - r, br = bird.x + r, bt = bird.y - r, bb = bird.y + r;
+    let hit = bt <= 0 || bb >= GROUND_Y;
+    for (const p of pipes) {
+      const pl = p.x - CAP_EX, pr = p.x + PIPE_W + CAP_EX;
+      if (br > pl && bl < pr && (bt < p.gapY || bb > p.gapY + GAP)) { hit = true; break; }
+    }
+    if (hit) gameOver();
+  } else if (state === "over") {
+    bird.vy = Math.min(bird.vy + GRAVITY * dt, MAX_FALL);
+    bird.y = Math.min(bird.y + bird.vy * dt, GROUND_Y - R);
+  }
+}
+
+// ----- Отрисовка -----
+function ellipse(x, y, w, h) { ctx.beginPath(); ctx.ellipse(x + w / 2, y + h / 2, w / 2, h / 2, 0, 0, Math.PI * 2); ctx.fill(); }
+function line(x1, y1, x2, y2) { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); }
+function drawSky() {
+  const g = ctx.createLinearGradient(0, 0, 0, GROUND_Y);
+  g.addColorStop(0, "rgb(80,170,235)"); g.addColorStop(1, "rgb(190,235,255)");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, GROUND_Y);
+  ctx.fillStyle = "rgba(255,255,255,0.92)";
+  for (const c of clouds) { ellipse(c.x, c.y, 60, 34); ellipse(c.x + 25, c.y - 14, 56, 44); ellipse(c.x + 55, c.y, 52, 32); }
+}
+function pipeRect(x, y, w, h, light) {
+  if (h <= 0) return;
+  const g = ctx.createLinearGradient(x, 0, x + w, 0);
+  g.addColorStop(0, light ? "rgb(140,220,70)" : "rgb(120,200,60)"); g.addColorStop(1, "rgb(40,120,30)");
+  ctx.fillStyle = g; ctx.fillRect(x, y, w, h);
+  ctx.strokeStyle = "rgb(30,70,20)"; ctx.lineWidth = 2; ctx.strokeRect(x, y, w, h);
+  ctx.fillStyle = "rgba(255,255,255,0.27)"; ctx.fillRect(x + 8, y + 2, 6, h - 4);
+}
+function drawPipe(p) {
+  pipeRect(p.x, 0, PIPE_W, p.gapY - CAP_H, false);
+  pipeRect(p.x - CAP_EX, p.gapY - CAP_H, PIPE_W + 2 * CAP_EX, CAP_H, true);
+  const by = p.gapY + GAP;
+  pipeRect(p.x - CAP_EX, by, PIPE_W + 2 * CAP_EX, CAP_H, true);
+  pipeRect(p.x, by + CAP_H, PIPE_W, GROUND_Y - by - CAP_H, false);
+}
+function drawGround() {
+  ctx.fillStyle = "rgb(222,200,130)"; ctx.fillRect(0, GROUND_Y, W, H - GROUND_Y);
+  ctx.fillStyle = "rgb(110,190,60)"; ctx.fillRect(0, GROUND_Y, W, 16);
+  ctx.fillStyle = "rgb(90,160,45)";
+  for (let x = -groundOffset - 24; x < W + 24; x += 24) {
+    ctx.beginPath(); ctx.moveTo(x, GROUND_Y + 16); ctx.lineTo(x + 12, GROUND_Y + 16);
+    ctx.lineTo(x + 20, GROUND_Y + 4); ctx.lineTo(x + 8, GROUND_Y + 4); ctx.fill();
+  }
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgb(70,110,30)"; line(0, GROUND_Y, W, GROUND_Y);
+  ctx.strokeStyle = "rgb(180,150,80)"; line(0, GROUND_Y + 16, W, GROUND_Y + 16);
+  ctx.fillStyle = "rgba(120,90,40,0.85)";
+  ctx.font = "600 12px -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif";
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillText("Карайкоз Н. В.", W / 2, Math.min(GROUND_Y + 48, H - safe.b - 10));
+}
+function drawBird() {
+  // Наклон птицы зависит от скорости: вверх — нос поднят, вниз — опущен
+  const a = state === "start" ? 0 : Math.max(-25, Math.min(90, bird.vy / MAX_FALL * 90));
+  ctx.save(); ctx.translate(bird.x, bird.y); ctx.rotate(a * Math.PI / 180);
+  const outline = "rgb(90,60,10)";
+  ctx.fillStyle = "rgb(255,214,46)"; ctx.beginPath(); ctx.arc(0, 0, R, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = outline; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = "rgb(255,240,160)"; ellipse(-R * 0.6, R * 0.05, R * 1.2, R * 0.8);           // брюшко
+  const wh = R * (0.5 + 0.4 * Math.sin(bird.wing));                                           // крыло
+  ctx.fillStyle = "rgb(245,170,30)"; ellipse(-R * 0.95, -wh / 2 + 2, R, wh);
+  ctx.lineWidth = 1.5; ctx.beginPath(); ctx.ellipse(-R * 0.45, 2, R / 2, wh / 2, 0, 0, Math.PI * 2); ctx.stroke();
+  ctx.fillStyle = "#fff"; ellipse(R * 0.15, -R * 0.75, R * 0.7, R * 0.7);                     // глаз
+  ctx.beginPath(); ctx.ellipse(R * 0.5, -R * 0.4, R * 0.35, R * 0.35, 0, 0, Math.PI * 2); ctx.stroke();
+  ctx.fillStyle = "#000"; ellipse(R * 0.48, -R * 0.55, R * 0.25, R * 0.3);
+  ctx.fillStyle = "rgb(240,100,30)"; ctx.strokeStyle = "rgb(120,50,10)";                     // клюв
+  ctx.beginPath(); ctx.moveTo(R * 0.6, -R * 0.1); ctx.lineTo(R * 1.45, R * 0.15); ctx.lineTo(R * 0.6, R * 0.45);
+  ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.restore();
+}
+// Текст по центру с тёмной обводкой; длинная строка ужимается по ширине экрана
+function text(s, size, y, color, weight) {
+  const font = sz => (weight || "bold") + " " + sz + "px -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif";
+  ctx.font = font(size);
+  const maxW = W - 24, w = ctx.measureText(s).width;
+  if (w > maxW) { size = Math.floor(size * maxW / w); ctx.font = font(size); }
+  ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.lineJoin = "round";
+  ctx.lineWidth = size / 7; ctx.strokeStyle = "rgba(40,40,40,0.8)"; ctx.strokeText(s, W / 2, y);
+  ctx.fillStyle = color; ctx.fillText(s, W / 2, y);
+}
+function draw() {
+  ctx.setTransform(k * dpr, 0, 0, k * dpr, 0, 0);   // рисуем в игровых координатах
+  drawSky();
+  for (const p of pipes) drawPipe(p);
+  drawGround();
+  drawBird();
+  const top = safe.t + 14;                          // счёт ниже выреза/Dynamic Island
+  const cy = GROUND_Y * 0.5;                        // центр игрового поля
+  if (state === "start") {
+    text("FLAPPY BIRD", 46, Math.max(top + 50, cy - 170), "#fff");
+    text(isTouch ? "Коснись, чтобы начать" : "Нажми ПРОБЕЛ, чтобы начать", 28, cy + 60, "#fff");
+    text(isTouch ? "Касание — взмах крыльями" : "Пробел / клик / ↑ — взмах", 20, cy + 104, "#fff", "600");
+    text(isTouch ? "Кнопка вверху справа — пауза" : "P — пауза,  M — звук", 20, cy + 132, "#fff", "600");
+    text("Лучший результат: " + best, 22, cy + 170, "rgb(255,236,140)", "bold");
+  } else if (state === "playing") {
+    text(String(score), 60, top, "#fff");
+  } else if (state === "paused") {
+    ctx.fillStyle = "rgba(0,0,0,0.25)"; ctx.fillRect(0, 0, W, H);
+    text(String(score), 60, top, "#fff");
+    text("ПАУЗА", 48, cy - 50, "#fff");
+    text(isTouch ? "Коснись, чтобы продолжить" : "P или ПРОБЕЛ — продолжить", 24, cy + 14, "#fff");
+  } else if (state === "over") {
+    const bw = Math.min(W - 40, 340), bx = (W - bw) / 2, by = cy - 130;
+    ctx.fillStyle = "rgba(250,240,200,0.9)"; ctx.fillRect(bx, by, bw, 250);
+    ctx.strokeStyle = "rgb(150,100,40)"; ctx.lineWidth = 3; ctx.strokeRect(bx, by, bw, 250);
+    text("Игра окончена", 38, by + 20, "rgb(220,90,30)");
+    text("Счёт: " + score, 30, by + 88, "rgb(255,250,235)");
+    text("Лучший: " + best, 30, by + 130, "rgb(255,250,235)");
+    if (overLock <= 0) text(isTouch ? "Коснись — заново" : "ПРОБЕЛ — заново", 26, by + 190, "rgb(140,230,90)");
+  }
+  if (flash > 0) {                                  // белая вспышка при столкновении
+    ctx.fillStyle = "rgba(255,255,255," + (Math.min(1, flash / 0.4) * 0.7) + ")";
+    ctx.fillRect(0, 0, W, H);
+  }
+}
+
+// ----- Игровой цикл: requestAnimationFrame + фиксированный шаг физики -----
+// На 60 Гц за кадр делается 2 шага по 1/120 с, на 120 Гц (ProMotion) — 1 шаг:
+// скорость игры одинаковая на любом экране.
+let lastTime = performance.now(), acc = 0;
+function tick(frameDt) {
+  if (!(frameDt > 0)) frameDt = 0;
+  if (frameDt > MAX_FRAME) frameDt = MAX_FRAME;
+  if (state === "paused") { acc = 0; return; }
+  acc += frameDt;
+  let n = 0;
+  while (acc >= STEP && n < 20) { update(STEP); acc -= STEP; n++; }
+}
+function loop(now) {
+  tick((now - lastTime) / 1000); lastTime = now;
+  draw();
+  requestAnimationFrame(loop);
+}
+resize();
+updateButtons();
+requestAnimationFrame(t => { lastTime = t; requestAnimationFrame(loop); });
+</script>
+</body>
+</html>
